@@ -9,7 +9,7 @@ const Search = () => {
     e.preventDefault();
     // Fetch the search results from the API endpoint
     axios
-      .get(`API_URL/products?search=${searchTerm}`)
+      .get(`https://fakestoreapi.com/products?search=${searchTerm}`)
       .then((response) => setSearchResults(response.data))
       .catch((error) => console.error(error));
   };
@@ -30,6 +30,7 @@ const Search = () => {
           <img src={product.image} alt={product.name} />
           <h3>{product.name}</h3>
           <p>Price: {product.price}</p>
+          
         </div>
       ))}
     </div>
