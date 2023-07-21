@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css'; // Import your CSS file (make sure the file path is correct)
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -13,18 +14,20 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Home Page</h2>
-      {products.map((product) => (
-        <div key={product.id}>
-          <img
-            src={product.image} // Using the provided absolute image URL
-            alt={product.title}
-            className="product-image"
-          />
-          <h3>{product.title}</h3>
-          <p>Price: ${product.price}</p>
-        </div>
-      ))}
+     
+      <div className="product-container">
+        {products.map((product) => (
+          <div key={product.id} className="product-item">
+            <img
+              src={product.image}
+              alt={product.title}
+              className="product-image" // Apply the CSS class to the image element
+            />
+            <h3>{product.title}</h3>
+            <p>Price: ${product.price}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
