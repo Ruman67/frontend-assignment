@@ -6,7 +6,7 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch the list of products from the API endpoint
-    axios.get('https://fakestoreapi.com/products') // Add quotes around the URL
+    axios.get('https://fakestoreapi.com/products')
       .then((response) => setProducts(response.data))
       .catch((error) => console.error(error));
   }, []);
@@ -16,7 +16,11 @@ const Home = () => {
       <h2>Home Page</h2>
       {products.map((product) => (
         <div key={product.id}>
-          <img src={product.image} alt={product.title} />
+          <img
+            src={product.image} // Using the provided absolute image URL
+            alt={product.title}
+            className="product-image"
+          />
           <h3>{product.title}</h3>
           <p>Price: ${product.price}</p>
         </div>
@@ -26,9 +30,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-
-
-
