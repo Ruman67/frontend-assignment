@@ -1,23 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Search from "./Search";
 import ProductDetails from "./ProductDetails";
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="App">
+        <div className="Search-bar container">
+          <div>SearchBar</div>
+          <div>
+          SearchResults
+          </div>
+        </div>
+       
         <Routes>
           <Route exact path="/" component={Home} />
           <Route path="/search" component={Search} />
