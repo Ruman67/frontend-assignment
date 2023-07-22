@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
-const ProductDetails = () => {
+import './ProductDetails';
+const ProductDetailsPage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
 
@@ -17,12 +17,13 @@ const ProductDetails = () => {
   return (
     <div>
       <h2>Product Details</h2>
-      <img src={product.image} alt={product.title} />
-      <h3>{product.title}</h3>
-      <p>Price: ${product.price}</p>
+      <img src={product.image} alt={product.name} />
+      <h3>{product.name}</h3>
+      <p>Price: {product.price}</p>
       <p>Description: {product.description}</p>
+      {/* Add other product details here */}
     </div>
   );
 };
 
-export default ProductDetails;
+export default ProductDetailsPage;
